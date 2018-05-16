@@ -1,6 +1,7 @@
 The [MIT License](http://opensource.org/licenses/mit-license.php)
 
 Copyright (c) 2015 [Avtandil Kikabidze aka LONGMAN](https://github.com/akalongman)
+Copyright (c) 2018 [Joe Huss aka Lord Detain](https://github.com/detain)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

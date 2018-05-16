@@ -1,10 +1,10 @@
 # PHP IP Tools
 
-[![Build Status](https://travis-ci.org/akalongman/php-ip-tools.svg?branch=master)](https://travis-ci.org/akalongman/php-ip-tools)
-[![Latest Stable Version](https://img.shields.io/packagist/v/Longman/ip-tools.svg)](https://packagist.org/packages/longman/ip-tools)
-[![Total Downloads](https://img.shields.io/packagist/dt/Longman/ip-tools.svg)](https://packagist.org/packages/longman/ip-tools)
-[![Downloads Month](https://img.shields.io/packagist/dm/Longman/ip-tools.svg)](https://packagist.org/packages/longman/ip-tools)
-[![License](https://img.shields.io/packagist/l/Longman/ip-tools.svg)](https://github.com/akalongman/ip-tools/LICENSE.md)
+[![Build Status](https://travis-ci.org/detain/php-ip-tools.svg?branch=master)](https://travis-ci.org/detain/php-ip-tools)
+[![Latest Stable Version](https://img.shields.io/packagist/v/Detain/ip-tools.svg)](https://packagist.org/packages/detain/ip-tools)
+[![Total Downloads](https://img.shields.io/packagist/dt/Detain/ip-tools.svg)](https://packagist.org/packages/detain/ip-tools)
+[![Downloads Month](https://img.shields.io/packagist/dm/Detain/ip-tools.svg)](https://packagist.org/packages/detain/ip-tools)
+[![License](https://img.shields.io/packagist/l/Detain/ip-tools.svg)](https://github.com/detain/ip-tools/LICENSE.md)
 
 
 Universal IP Tools for manipulation on IPv4 and IPv6.
@@ -12,16 +12,16 @@ Universal IP Tools for manipulation on IPv4 and IPv6.
 ## Require this package with Composer
 Install this package through [Composer](https://getcomposer.org/).
 Edit your project's `composer.json` file to require
-`longman/ip-tools`.
+`detain/ip-tools`.
 
 Create *composer.json* file:
 ```js
 {
-    "name": "yourproject/yourproject",
-    "type": "project",
-    "require": {
-        "longman/ip-tools": "~1.1.0"
-    }
+	"name": "yourproject/yourproject",
+	"type": "project",
+	"require": {
+		"detain/ip-tools": "~1.1.0"
+	}
 }
 ```
 And run composer update
@@ -29,7 +29,7 @@ And run composer update
 **Or** run a command in your command line:
 
 ```
-composer require longman/ip-tools
+composer require detain/ip-tools
 ```
 
 ## Usage
@@ -37,7 +37,7 @@ composer require longman/ip-tools
 <?php
 $loader = require __DIR__.'/vendor/autoload.php';
 
-use Longman\IPTools\Ip;
+use Detain\IPTools\Ip;
 
 // Validating
 $status = Ip::isValid('192.168.1.1'); // true
@@ -97,7 +97,7 @@ $status = Ip::match('2001:cdba:0000:0000:0000:0000:3257:9652', '2001:cdba:0000:0
 $status = Ip::match('2001:cdba:0000:0000:0000:0000:3257:9652', '2001:cdba:0000:0000:0000:0000:*:*'); // true
 
 $status = Ip::match('2001:cdba:0000:0000:0000:0000:3257:9652',
-                    '2001:cdba:0000:0000:0000:0000:3257:1234-2001:cdba:0000:0000:0000:0000:3257:9999'); // true
+					'2001:cdba:0000:0000:0000:0000:3257:1234-2001:cdba:0000:0000:0000:0000:3257:9999'); // true
 
 
 $status = Ip::match('2001:cdba:0000:0000:0000:0000:3258:9652', '2001:cdba:0000:0000:0000:0000:3257:*'); // false
@@ -105,7 +105,7 @@ $status = Ip::match('2001:cdba:0000:0000:0000:0000:3258:9652', '2001:cdba:0000:0
 $status = Ip::match('2001:cdba:0000:0000:0000:1234:3258:9652', '2001:cdba:0000:0000:0000:0000:*:*'); // false
 
 $status = Ip::match('2001:cdba:0000:0000:0000:0000:3257:7778',
-                    '2001:cdba:0000:0000:0000:0000:3257:1234-2001:cdba:0000:0000:0000:0000:3257:7777'); // false
+					'2001:cdba:0000:0000:0000:0000:3257:1234-2001:cdba:0000:0000:0000:0000:3257:7777'); // false
 
 ```
 
@@ -114,12 +114,12 @@ $status = Ip::match('2001:cdba:0000:0000:0000:0000:3257:7778',
 
 -----
 This code is available on
-[Github](https://github.com/akalongman/php-ip-tools). Pull requests are welcome.
+[Github](https://github.com/detain/php-ip-tools). Pull requests are welcome.
 
 ## Troubleshooting
 
 If you like living on the edge, please report any bugs you find on the
-[PHP IP Tools issues](https://github.com/akalongman/php-ip-tools/issues) page.
+[PHP IP Tools issues](https://github.com/detain/php-ip-tools/issues) page.
 
 ## Contributing
 
@@ -132,6 +132,7 @@ which this project is licensed under.
 
 ## Credits
 
+- [Joe Huss aka Lord Detain](https://github.com/detain)
 - [Avtandil Kikabidze aka LONGMAN](https://github.com/akalongman)
 
 Full credit list in [CREDITS](CREDITS)
