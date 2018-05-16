@@ -27,6 +27,20 @@ abstract class Ip
 
 	protected static $isv6 = false;
 
+	public static function network($address, $netmask)
+	{
+		return long2ip(ip2long($address) & ip2long($netmask));
+	}
+
+	public static function broadcast($network, $netmask)
+	{
+		return long2ip(ip2long(self::network($address, $netmask)) | (~(ip2long($netmask))));
+	}
+
+	public static function inverse($netbits)
+	{
+		return long2ip(~(ip2long('255.255.255.255') << (32 - $netbits)));
+	}
 
 	/**
 	 * Checks if an IP is valid.
