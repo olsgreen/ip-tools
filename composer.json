@@ -1,13 +1,13 @@
 {
 	"name": "detain/ip-tools",
 	"type": "library",
-	"description": "PHP IP Tools for manipulation with IPv4 and IPv6",
-	"keywords": ["ip", "ipv4", "ipv6", "tools", "utilities", "compare", "match", "subnet", "mask"],
+	"description": "Universal IP Tools for manipulation on IPv4 and IPv6. Network calculator for subnet mask and other classless (CIDR) network information.",
+	"keywords": ["ip", "ipv4", "ipv6", "tools", "utilities", "compare", "match", "subnet", "mask", "calculator", "network", "cidr", "address"],
+	"homepage": "https://github.com/detain/ip-tools",
 	"license": "MIT",
-	"homepage": "https://github.com/detain/php-ip-tools",
 	"support": {
-		"issues": "https://github.com/detain/php-ip-tools/issues",
-		"source": "https://github.com/detain/php-ip-tools"
+		"issues": "https://github.com/detain/ip-tools/issues",
+		"source": "https://github.com/detain/ip-tools"
 	},
 	"authors": [
 		{
@@ -15,32 +15,23 @@
 			"email": "detain@interserver.net",
 			"homepage": "https://www.interserver.net",
 			"role": "Developer"
-		},
-		{
-			"name": "Avtandil Kikabidze aka LONGMAN",
-			"email": "akalongman@gmail.com",
-			"homepage": "https://longman.me",
-			"role": "Developer"
 		}
 	],
+	"minimum-stability": "dev",
 	"require": {
 		"php": ">=5.5",
 		"ext-bcmath": "*"
 	},
+	"require-dev": {
+		"phpunit/phpunit": "5.*",
+		"phpspec/phpspec": "~2.1",
+		"satooshi/php-coveralls": "^1.0",
+		"squizlabs/php_codesniffer": "2.*"
+	},
 	"autoload": {
-		"psr-4": {
-			"Detain\\IPTools\\": "src/"
-		}
+		"psr-4": { "Net\\": "src/" }
 	},
 	"autoload-dev": {
-		"psr-4": {
-			"Tests\\": "tests/"
-		}
-	},
-	"minimum-stability": "dev",
-	"require-dev": {
-		"phpunit/phpunit": "~4.1",
-		"phpspec/phpspec": "~2.1",
-		"squizlabs/php_codesniffer": "~2.3"
+		"psr-4": { "Tests\\": "tests/" }
 	}
 }
