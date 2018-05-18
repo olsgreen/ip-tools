@@ -1,16 +1,13 @@
 # IPv4/IPv6 and Subnet Calculator (PHP)
 
-Universal IP Tools for manipulation on IPv4 and IPv6.
-Network calculator for subnet mask and other classless (CIDR) network information.
+Universal Network calculator and IP Tools for manipulation on IPv4 addresses, IPv6 addresses; and subnet mask manipulation and getting (CIDR) network information.
 
-[![Build Status](https://travis-ci.org/detain/php-ip-tools.svg?branch=master)](https://travis-ci.org/detain/php-ip-tools)
+[![Build Status](https://travis-ci.org/detain/ip-tools.svg?branch=master)](https://travis-ci.org/detain/ip-tools)
 [![Latest Stable Version](https://img.shields.io/packagist/v/Detain/ip-tools.svg)](https://packagist.org/packages/detain/ip-tools)
 [![Total Downloads](https://img.shields.io/packagist/dt/Detain/ip-tools.svg)](https://packagist.org/packages/detain/ip-tools)
 [![Downloads Month](https://img.shields.io/packagist/dm/Detain/ip-tools.svg)](https://packagist.org/packages/detain/ip-tools)
-[![License](https://img.shields.io/packagist/l/Detain/ip-tools.svg)](https://github.com/detain/php-ip-tools/blob/master/LICENSE.md)
-[![Coverage Status](https://coveralls.io/repos/github/markrogoyski/ipv4-subnet-calculator-php/badge.svg?branch=master)](https://coveralls.io/github/markrogoyski/ipv4-subnet-calculator-php?branch=master)
-[![Build Status](https://travis-ci.org/markrogoyski/ipv4-subnet-calculator-php.svg?branch=master)](https://travis-ci.org/markrogoyski/ipv4-subnet-calculator-php)
-[![License](https://poser.pugx.org/markrogoyski/math-php/license)](https://packagist.org/packages/markrogoyski/ipv4-subnet-calculator-php)
+[![License](https://img.shields.io/packagist/l/Detain/ip-tools.svg)](https://github.com/detain/ip-tools/blob/master/LICENSE)
+[![Coverage Status](https://coveralls.io/repos/github/detain/ip-tools/badge.svg?branch=master)](https://coveralls.io/github/detain/ip-tools?branch=master)
 
 Features
 --------
@@ -19,7 +16,7 @@ Given an IP address and CIDR network size, it calculates the network information
 ### Calculations
  * IP address
  * Network size
- * Subnet mask 
+ * Subnet mask
  * Network portion
  * Host portion
  * Number of IP addresses in the network
@@ -38,7 +35,7 @@ Provides each data in dotted quads, hexadecimal, and binary formats, as well as 
 
 Setup
 -----
- 
+
 
 ### Minimum Requirements
  * PHP 5.3.0
@@ -48,7 +45,7 @@ Setup
 ```javascript
 {
   "require": {
-      "markrogoyski/ipv4-subnet-calculator": "2.*"
+	  "markrogoyski/ipv4-subnet-calculator": "2.*"
   }
 }
 ```
@@ -262,47 +259,47 @@ $sub->getSubnetArrayReport();
 /*
 Array
 (
-    [ip_address_with_network_size] => 192.168.112.203/23
-    [ip_address] => Array
-        (
-            [quads] => 192.168.112.203
-            [hex] => C0A870CB
-            [binary] => 11000000101010000111000011001011
-        )
+	[ip_address_with_network_size] => 192.168.112.203/23
+	[ip_address] => Array
+		(
+			[quads] => 192.168.112.203
+			[hex] => C0A870CB
+			[binary] => 11000000101010000111000011001011
+		)
 
-    [subnet_mask] => Array
-        (
-            [quads] => 255.255.254.0
-            [hex] => FFFFFE00
-            [binary] => 11111111111111111111111000000000
-        )
+	[subnet_mask] => Array
+		(
+			[quads] => 255.255.254.0
+			[hex] => FFFFFE00
+			[binary] => 11111111111111111111111000000000
+		)
 
-    [network_portion] => Array
-        (
-            [quads] => 192.168.112.0
-            [hex] => C0A87000
-            [binary] => 11000000101010000111000000000000
-        )
+	[network_portion] => Array
+		(
+			[quads] => 192.168.112.0
+			[hex] => C0A87000
+			[binary] => 11000000101010000111000000000000
+		)
 
-    [host_portion] => Array
-        (
-            [quads] => 0.0.0.203
-            [hex] => 000000CB
-            [binary] => 00000000000000000000000011001011
-        )
+	[host_portion] => Array
+		(
+			[quads] => 0.0.0.203
+			[hex] => 000000CB
+			[binary] => 00000000000000000000000011001011
+		)
 
-    [network_size] => 23
-    [number_of_ip_addresses] => 512
-    [number_of_addressable_hosts] => 510
-    [ip_address_range] => Array
-        (
-            [0] => 192.168.112.0
-            [1] => 192.168.113.255
-        )
+	[network_size] => 23
+	[number_of_ip_addresses] => 512
+	[number_of_addressable_hosts] => 510
+	[ip_address_range] => Array
+		(
+			[0] => 192.168.112.0
+			[1] => 192.168.113.255
+		)
 
-    [broadcast_address] => 192.168.113.255
-    [min_host] => 192.168.112.1
-    [max_host] => 192.168.113.254
+	[broadcast_address] => 192.168.113.255
+	[min_host] => 192.168.112.1
+	[max_host] => 192.168.113.254
 )
 */
 ```
@@ -312,37 +309,37 @@ Array
 $sub->getJSONReport();
 /*
 {
-    "ip_address_with_network_size": "192.168.112.203/23",
-    "ip_address": {
-        "quads": "192.168.112.203",
-        "hex": "C0A870CB",
-        "binary": "11000000101010000111000011001011"
-    },
-    "subnet_mask": {
-        "quads": "255.255.254.0",
-        "hex": "FFFFFE00",
-        "binary": "11111111111111111111111000000000"
-    },
-    "network_portion": {
-        "quads": "192.168.112.0",
-        "hex": "C0A87000",
-        "binary": "11000000101010000111000000000000"
-    },
-    "host_portion": {
-        "quads": "0.0.0.203",
-        "hex": "000000CB",
-        "binary": "00000000000000000000000011001011"
-    },
-    "network_size": 23,
-    "number_of_ip_addresses": 512,
-    "number_of_addressable_hosts": 510,
-    "ip_address_range": [
-        "192.168.112.0",
-        "192.168.113.255"
-    ],
-    "broadcast_address": "192.168.113.255",
-    "min_host": "192.168.112.1",
-    "max_host": "192.168.113.254"
+	"ip_address_with_network_size": "192.168.112.203/23",
+	"ip_address": {
+		"quads": "192.168.112.203",
+		"hex": "C0A870CB",
+		"binary": "11000000101010000111000011001011"
+	},
+	"subnet_mask": {
+		"quads": "255.255.254.0",
+		"hex": "FFFFFE00",
+		"binary": "11111111111111111111111000000000"
+	},
+	"network_portion": {
+		"quads": "192.168.112.0",
+		"hex": "C0A87000",
+		"binary": "11000000101010000111000000000000"
+	},
+	"host_portion": {
+		"quads": "0.0.0.203",
+		"hex": "000000CB",
+		"binary": "00000000000000000000000011001011"
+	},
+	"network_size": 23,
+	"number_of_ip_addresses": 512,
+	"number_of_addressable_hosts": 510,
+	"ip_address_range": [
+		"192.168.112.0",
+		"192.168.113.255"
+	],
+	"broadcast_address": "192.168.113.255",
+	"min_host": "192.168.112.1",
+	"max_host": "192.168.113.254"
 }
 */
 ```

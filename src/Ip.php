@@ -178,9 +178,9 @@ abstract class Ip
         $status = false;
         if (strpos($range, '/') !== false) {
             $status = self::processWithSlash($range);
-        } else if (strpos($range, '*') !== false) {
+        } elseif (strpos($range, '*') !== false) {
             $status = self::processWithAsterisk($range);
-        } else if (strpos($range, '-') !== false) {
+        } elseif (strpos($range, '-') !== false) {
             $status = self::processWithMinus($range);
         } else {
             $status = ($ip === $range);
@@ -327,7 +327,7 @@ abstract class Ip
                 $dec = bcadd($dec, $bin[$i], 0);
             }
             $long = $dec;
-        } else if (self::isValidv4($ip)) {
+        } elseif (self::isValidv4($ip)) {
             $long = ip2long($ip);
         }
         return $long;
