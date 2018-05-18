@@ -173,7 +173,7 @@ Usage
 ### Create New Subnet
 ```php
 // For network 192.168.112.203/23
-$sub = new IPv4\Subnet('192.168.112.203', 23);
+$sub = new Net\Subnet('192.168.112.203', 23);
 ```
 
 ### Various Network Information

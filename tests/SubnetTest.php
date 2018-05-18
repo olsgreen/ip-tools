@@ -1,11 +1,11 @@
 <?php
 namespace Tests;
 
-use IPv4;
+use Net\Subnet;
 
 class SubnetTest extends \PHPUnit_Framework_TestCase
 {
-	/** @var IPv4\Subnet */
+	/** @var Net\Subnet */
 	private $sub;
 
 	/**
@@ -13,7 +13,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function setUp()
 	{
-		$this->sub = new IPv4\Subnet('192.168.112.203', 23);
+		$this->sub = new Subnet('192.168.112.203', 23);
 	}
 
 	/**
@@ -24,7 +24,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetIpAddress($ip_address, $network_size)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertSame($ip_address, $sub->getIPAddress());
 	}
 
@@ -36,7 +36,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetNetworkSize($ip_address, $network_size)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertSame($network_size, $sub->getNetworkSize());
 	}
 
@@ -89,7 +89,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetIPAddressQuads($ip_address, array $quads)
 	{
-		$sub = new IPv4\Subnet($ip_address, 24);
+		$sub = new Subnet($ip_address, 24);
 		$this->assertSame($quads, $sub->getIPAddressQuads());
 	}
 
@@ -113,7 +113,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetIPAddressHex($ip_address, $hex)
 	{
-		$sub = new IPv4\Subnet($ip_address, 24);
+		$sub = new Subnet($ip_address, 24);
 		$this->assertSame($hex, $sub->getIPAddressHex());
 	}
 
@@ -137,7 +137,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetIPAddressBinary($ip_address, $binary)
 	{
-		$sub = new IPv4\Subnet($ip_address, 24);
+		$sub = new Subnet($ip_address, 24);
 		$this->assertSame($binary, $sub->getIPAddressBinary());
 	}
 
@@ -162,7 +162,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetNumberIPAddresses($ip_address, $network_size, $number_addresses)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertEquals($number_addresses, $sub->getNumberIpAddresses());
 	}
 
@@ -216,7 +216,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetNumberAddressableHosts($ip_address, $network_size, $number_addressable_hosts)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertEquals($number_addressable_hosts, $sub->getNumberAddressableHosts());
 	}
 
@@ -271,7 +271,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetIpAddressRange($ip_address, $network_size, $lower_ip, $upper_ip)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertEquals($lower_ip, $sub->getIpAddressRange()[0]);
 		$this->assertEquals($upper_ip, $sub->getIPAddressRange()[1]);
 	}
@@ -285,7 +285,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetNetworkPortionLowerIp($ip_address, $network_size, $network_portion)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertEquals($network_portion, $sub->getNetworkPortion());
 	}
 
@@ -340,7 +340,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetAddressableHostRange($ip_address, $network_size, $minHost, $maxHost)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertEquals($minHost, $sub->getAddressablehostRange()[0]);
 		$this->assertEquals($maxHost, $sub->getAddressablehostRange()[1]);
 	}
@@ -354,7 +354,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetBroadcastAddress($ip_address, $network_size, $broadcast_address)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertEquals($broadcast_address, $sub->getBroadcastAddress());
 	}
 
@@ -408,7 +408,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetMinHost($ip_address, $network_size, $minHost)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertEquals($minHost, $sub->getMinHost());
 	}
 
@@ -422,7 +422,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetMaxHost($ip_address, $network_size, $_, $maxHost)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertEquals($maxHost, $sub->getMaxHost());
 	}
 
@@ -476,7 +476,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetMinHostQuads($ip_address, $network_size, array $quads)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertEquals($quads, $sub->getMinHostQuads());
 	}
 
@@ -509,7 +509,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetMaxHostQuads($ip_address, $network_size, array $quads)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertEquals($quads, $sub->getMaxHostQuads());
 	}
 
@@ -542,7 +542,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetMinHostHex($ip_address, $network_size, $hex)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertEquals($hex, $sub->getMinHostHex());
 	}
 
@@ -575,7 +575,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetMaxHostHex($ip_address, $network_size, $hex)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertEquals($hex, $sub->getMaxHostHex());
 	}
 
@@ -608,7 +608,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetMinHostBinary($ip_address, $network_size, $binary)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertEquals($binary, $sub->getMinHostBinary());
 	}
 
@@ -641,7 +641,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetMaxHostBinary($ip_address, $network_size, $binary)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertEquals($binary, $sub->getMaxHostBinary());
 	}
 
@@ -676,7 +676,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetSubnetMask($network_size, $subnet_mask, array $quads, $hex, $binary)
 	{
-		$sub = new IPv4\Subnet('192.168.233.207', $network_size);
+		$sub = new Subnet('192.168.233.207', $network_size);
 		$this->assertSame($subnet_mask, $sub->getSubnetMask());
 		$this->assertSame($quads, $sub->getSubnetMaskQuads());
 		$this->assertSame($hex, $sub->getSubnetMaskHex());
@@ -736,7 +736,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetNetworkPortion($ip_address, $network_size, $network, array $quads, $hex, $binary)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertSame($network, $sub->getNetworkPortion());
 		$this->assertSame($quads, $sub->getNetworkPortionQuads());
 		$this->assertSame($hex, $sub->getNetworkPortionHex());
@@ -796,7 +796,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetHostPortion($ip_address, $network_size, $host, array $quads, $hex, $binary)
 	{
-		$sub = new IPv4\Subnet($ip_address, $network_size);
+		$sub = new Subnet($ip_address, $network_size);
 		$this->assertSame($host, $sub->getHostPortion());
 		$this->assertSame($quads, $sub->getHostPortionQuads());
 		$this->assertSame($hex, $sub->getHostPortionHex());
@@ -853,7 +853,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	public function testConstructorExceptionOnBadIPAddress($ip_address)
 	{
 		$this->expectException(\UnexpectedValueException::class);
-		$sub = new IPv4\Subnet($ip_address, 24);
+		$sub = new Subnet($ip_address, 24);
 	}
 
 	/**
@@ -864,7 +864,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testValidateInputExceptionOnBadIPAddress($ip_address)
 	{
-		$validateInputs = new \ReflectionMethod(IPv4\Subnet::class, 'validateInputs');
+		$validateInputs = new \ReflectionMethod(Subnet::class, 'validateInputs');
 		$validateInputs->setAccessible(true);
 
 		$this->expectException(\UnexpectedValueException::class);
@@ -892,7 +892,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	public function testConstructorExceptionOnBadNetworkSize($network_size)
 	{
 		$this->expectException(\UnexpectedValueException::class);
-		$sub = new IPv4\Subnet('192.168.112.203', $network_size);
+		$sub = new Subnet('192.168.112.203', $network_size);
 	}
 
 
@@ -904,7 +904,7 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testValidateInputExceptionOnBadNetworkSize($network_size)
 	{
-		$validateInputs = new \ReflectionMethod(IPv4\Subnet::class, 'validateInputs');
+		$validateInputs = new \ReflectionMethod(Subnet::class, 'validateInputs');
 		$validateInputs->setAccessible(true);
 
 		$this->expectException(\UnexpectedValueException::class);
