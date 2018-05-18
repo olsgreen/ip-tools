@@ -961,26 +961,26 @@ class SubnetTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testPrintSubnetReport()
 	{
-		$this->expectOutputRegex('
-			/
-				^
-				\d+[.]\d+[.]\d+[.]\d+\/\d+ \s+ Quads \s+ Hex \s+ Binary \n
-				.+?                                                     \n
-				IP [ ] Address:      .+                                 \n
-				Subnet [ ] Mask:     .+                                 \n
-				Network [ ] Portion: .+                                 \n
-				Host [ ] Portion:    .+                                 \n
-																		\n
-				Number [ ] of [ ] IP [ ] Addresses:      \s+ \d+        \n
-				Number [ ] of [ ] Addressable [ ] Hosts: \s+ \d+        \n
-				IP [ ] Address [ ] Range:                \s+ .+?        \n
-				Broadcast [ ] Address:                   \s+ .+?        \n
-				Min [ ] Host:                            \s  .+?        \n
-				Max [ ] Host:                            \s  .+?        \n
-				$
-			/xms
-		');
-		$this->sub->printSubnetReport();
+        $this->expectOutputRegex('
+            /
+                ^
+                \d+[.]\d+[.]\d+[.]\d+\/\d+ \s+ Quads \s+ Hex \s+ Binary \n
+                .+?                                                     \n
+                IP [ ] Address:      .+                                 \n
+                Subnet [ ] Mask:     .+                                 \n
+                Network [ ] Portion: .+                                 \n
+                Host [ ] Portion:    .+                                 \n
+                                                                        \n
+                Number [ ] of [ ] IP [ ] Addresses:      \s+ \d+        \n
+                Number [ ] of [ ] Addressable [ ] Hosts: \s+ \d+        \n
+                IP [ ] Address [ ] Range:                \s+ .+?        \n
+                Broadcast [ ] Address:                   \s+ .+?        \n
+                Min [ ] Host:                            \s  .+?        \n
+                Max [ ] Host:                            \s  .+?        \n
+                $
+            /xms
+        ');
+        $this->sub->printSubnetReport();
 	}
 
 	/**
