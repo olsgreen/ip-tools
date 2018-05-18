@@ -170,10 +170,10 @@ $status = Ip::match('2001:cdba:0000:0000:0000:0000:3257:7778',
 Usage
 -----
 
-### Create New SubnetCalculator
+### Create New Subnet
 ```php
 // For network 192.168.112.203/23
-$sub = new IPv4\SubnetCalculator('192.168.112.203', 23);
+$sub = new IPv4\Subnet('192.168.112.203', 23);
 ```
 
 ### Various Network Information
@@ -363,7 +363,7 @@ Min Host:                    192.168.112.1
 Max Host:                    192.168.113.254
 */
 
-// Printing the SubnetCalculator object will print the printable report.
+// Printing the Subnet object will print the printable report.
 print($sub);
 /*
 192.168.112.203/23           Quads      Hex                           Binary
