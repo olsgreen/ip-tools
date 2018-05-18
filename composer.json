@@ -24,9 +24,10 @@
 	},
 	"require-dev": {
 	  "phpunit/phpunit": "5.*",
-	  "satooshi/php-coveralls": "^1.0",
+	  "php-coveralls/php-coveralls": "^1.0",
+          "phpunit/phpcov": "^2.0",
 	  "squizlabs/php_codesniffer": "2.*",
-		"phpspec/phpspec": "*"
+	  "phpspec/phpspec": "*"
 	},
 	"autoload": {
 		"psr-4": { "Net\\": "src/" }
