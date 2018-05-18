@@ -38,7 +38,7 @@ before_script:
 
 script:
   - vendor/bin/phpunit --configuration phpunit.xml.dist --coverage-clover clover.xml --bootstrap tests/bootstrap.php
-  - if [[ "$PHPCS" == "true" ]]; then vendor/bin/phpcs src --standard=coding_ruleset.xml -np; fi
+  - if [[ "$PHPCS" == "true" ]]; then vendor/bin/phpcs src --standard=coding_standard.xml -np; fi
 
 after_success:
   - travis_retry php vendor/bin/coveralls
