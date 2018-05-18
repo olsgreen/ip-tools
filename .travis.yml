@@ -41,7 +41,7 @@ script:
   - if [[ "$PHPCS" == "true" ]]; then vendor/bin/phpcs src --standard=coding_standard.xml -np; fi
 
 after_success:
-  - travis_retry php vendor/bin/coveralls
+  - travis_retry php vendor/bin/coveralls --coverage_clover=clover.xml
 
 notifications:
   on_success: never
