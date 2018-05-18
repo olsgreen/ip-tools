@@ -12,6 +12,7 @@
         <directory suffix="Test.php">tests</directory>
     </testsuite>
     <logging>
+        <log type="coverage-xml" target="build/cov/coverage.xml"/>
         <log type="coverage-php" target="build/cov/coverage.cov"/>
         <log type="coverage-clover" target="build/logs/clover.xml"/>
     </logging>
