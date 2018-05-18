@@ -37,7 +37,7 @@ before_script:
   - phpenv version-name | grep ^5.[34] && echo "apc.enable_cli=1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini ; true
 
 script:
-  - mkdir -p build/logs
+  - mkdir -p build/logs build/cov
   - php vendor/bin/phpunit -c phpunit.xml.dist
   - if [[ "$PHPCS" == "true" ]]; then vendor/bin/phpcs src --standard=coding_standard.xml -np; fi
 
