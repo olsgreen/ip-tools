@@ -27,19 +27,39 @@ abstract class Ip
 
     protected static $isv6 = false;
 
+    /**
+    * Returns the Network address for an IP address + Netmask
+    * 
+    * @param string $address an ip address (ie 192.168.0.100)
+    * @param string $netmask the netmask (ie 255.255.255.242)
+    * @return string the network address
+    */
     public static function network($address, $netmask)
     {
         return long2ip(ip2long($address) & ip2long($netmask));
     }
 
-    public static function broadcast($network, $netmask)
+    /**
+    * Gets the broadcast address
+    * 
+    * @param string $address an ip address (ie 192.168.0.100)
+    * @param string $netmask the netmask (ie 255.255.255.0)
+    * @return string the broadcast address
+    */
+    public static function broadcast($address, $netmask)
     {
         return long2ip(ip2long(self::network($address, $netmask)) | (~(ip2long($netmask))));
     }
 
-    public static function inverse($netbits)
+    /**
+    * Gets the Netmask from the blocksize
+    * 
+    * @param int $netbits blocksize (ie 24 for a /2)
+    * @return string the netmask matching the blocksize
+    */
+    public static function netmask($netbits)
     {
-        return long2ip(~(ip2long('255.255.255.255') << (32 - $netbits)));
+        return long2ip(ip2long('255.255.255.255') << (32 - $netbits));
     }
 
     /**

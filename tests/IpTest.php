@@ -200,6 +200,35 @@ class IpTest extends \PHPUnit_Framework_TestCase
         $dec = Ip::long2ip('338288524927261089654163772891438416681', true);
         $this->assertEquals('fe80::202:b3ff:fe1e:8329', $dec);
     }
+    
+    /**
+    * @test
+    */
+    public function testNetowrk()
+    {
+        $this->assertEquals('192.168.0.0', Ip::network('192.168.0.0', '255.255.255.252'));
+        $this->assertEquals('192.168.0.0', Ip::network('192.168.0.1', '255.255.255.252'));
+        $this->assertEquals('192.168.0.32', Ip::network('192.168.0.35', '255.255.255.252'));
+    }
+    
+    /**
+    * @test
+    */
+    public function testBroadcast()
+    {
+        $this->assertEquals('192.168.0.71', Ip::broadcast('192.168.0.68','255.255.255.248'));
+        $this->assertEquals('192.168.1.255', Ip::broadcast('192.168.1.32','255.255.255.0'));
+    }
+    
+    /**
+    * @test
+    */
+    public function testNetmask()
+    {
+        $this->assertEquals('255.255.255.0', Ip::netmask(24));
+        $this->assertEquals('255.255.255.240', Ip::netmask(28));
+    }
+    
 
     /**
      * @test
