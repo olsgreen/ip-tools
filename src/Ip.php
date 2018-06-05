@@ -29,7 +29,7 @@ abstract class Ip
 
     /**
     * Returns the Network address for an IP address + Netmask
-    * 
+    *
     * @param string $address an ip address (ie 192.168.0.100)
     * @param string $netmask the netmask (ie 255.255.255.242)
     * @return string the network address
@@ -41,7 +41,7 @@ abstract class Ip
 
     /**
     * Gets the broadcast address
-    * 
+    *
     * @param string $address an ip address (ie 192.168.0.100)
     * @param string $netmask the netmask (ie 255.255.255.0)
     * @return string the broadcast address
@@ -53,7 +53,7 @@ abstract class Ip
 
     /**
     * Gets the Netmask from the blocksize
-    * 
+    *
     * @param int $netbits blocksize (ie 24 for a /2)
     * @return string the netmask matching the blocksize
     */
